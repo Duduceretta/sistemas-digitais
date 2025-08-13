@@ -1,0 +1,24 @@
+int pinI = 2;      // Entrada I
+int pinM = 3;      // Entrada M
+int pinC = 4;      // Entrada C
+int pinAlarme = 11;
+
+void setup() {
+  
+  pinMode(pinI, INPUT_PULLUP);
+  pinMode(pinM, INPUT_PULLUP);
+  pinMode(pinC, INPUT_PULLUP);
+  pinMode(pinAlarme, OUTPUT);
+}
+
+void loop() {
+  bool I = !digitalRead(pinI);
+  bool M = !digitalRead(pinM);
+  bool C = !digitalRead(pinC);
+
+  if ( (I && !C) || (M && !C) || (!I && M) ) {
+    digitalWrite(pinAlarme, HIGH);
+  } else {
+    digitalWrite(pinAlarme, LOW);
+  }
+}

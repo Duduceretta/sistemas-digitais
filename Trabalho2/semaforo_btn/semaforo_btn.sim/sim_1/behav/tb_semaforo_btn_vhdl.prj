@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../semaforo_btn.srcs/sources_1/new/semaforo_btn.vhd"
+vhdl xil_defaultlib  "../../../semaforo_btn.srcs/sim_1/new/tb_semaforo_btn.vhd"
+
+# Do not sort compile order
+nosort
